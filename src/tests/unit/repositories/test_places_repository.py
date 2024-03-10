@@ -34,7 +34,7 @@ class TestPlacesRepository(TestRepositoryBase):
         """
 
         # формирование данных для создания записи
-        values = fixture_place.dict(exclude_none=True)
+        values = fixture_place.model_dump(exclude_none=True)
         # формирование запроса для создания записи
         statement = (
             insert(repository.model).values(values).returning(repository.model.id)
